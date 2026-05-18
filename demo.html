@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS风格演示</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/telegram.css">
+<link rel="stylesheet" href="css/saas.css">
+</head>
+<body class="auth-body">
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>🎨 SaaS风格演示</h1>
+      <p>现代化的UI组件展示</p>
+    </div>
+
+    <div class="saas-tabs" style="margin-bottom: 24px;">
+      <button class="saas-tab active" onclick="switchDemoTab('components')">组件</button>
+      <button class="saas-tab" onclick="switchDemoTab('themes')">主题</button>
+      <button class="saas-tab" onclick="switchDemoTab('effects')">效果</button>
+    </div>
+
+    <div id="componentsTab" class="demo-tab-content">
+      <h3 style="margin-bottom: 16px; color: var(--text-primary);">现代化组件</h3>
+      
+      <div style="display: grid; gap: 20px;">
+        <!-- 按钮示例 -->
+        <div>
+          <div class="saas-label">按钮样式</div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="saas-btn">主要按钮</button>
+            <button class="btn btn-outline">轮廓按钮</button>
+            <button class="btn btn-sm btn-outline-danger">危险按钮</button>
+          </div>
+        </div>
+
+        <!-- 输入框示例 -->
+        <div>
+          <div class="saas-label">输入框</div>
+          <input class="saas-input" type="text" placeholder="输入文本...">
+          <small style="display: block; color: var(--text-secondary); margin-top: 4px;">带有聚焦效果的输入框</small>
+        </div>
+
+        <!-- 统计卡片示例 -->
+        <div>
+          <div class="saas-label">统计卡片</div>
+          <div class="saas-stats-card">
+            <div class="saas-stats-icon">📊</div>
+            <div class="saas-stats-content">
+              <div class="saas-stats-value">1,234</div>
+              <div class="saas-stats-label">活跃用户</div>
+            </div>
+            <div class="saas-stats-trend positive">+12%</div>
+          </div>
+        </div>
+
+        <!-- 徽章示例 -->
+        <div>
+          <div class="saas-label">徽章标签</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="saas-badge">默认</span>
+            <span class="saas-badge" style="background: rgba(46, 204, 113, 0.1); color: var(--success);">成功</span>
+            <span class="saas-badge" style="background: rgba(231, 76, 60, 0.1); color: var(--danger);">危险</span>
+            <span class="saas-badge" style="background: rgba(243, 156, 18, 0.1); color: var(--warning);">警告</span>
+          </div>
+        </div>
+
+        <!-- 头像示例 -->
+        <div>
+          <div class="saas-label">用户头像</div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="saas-avatar small">A</div>
+            <div class="saas-avatar">B</div>
+            <div class="saas-avatar large">CD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="themesTab" class="demo-tab-content" style="display: none;">
+      <h3 style="margin-bottom: 16px; color: var(--text-primary);">主题切换</h3>
+      
+      <div style="margin-bottom: 20px;">
+        <p style="color: var(--text-secondary); margin-bottom: 12px;">点击右上角的主题按钮切换主题模式</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-outline" onclick="showNotification('success', '操作成功')">成功通知</button>
+          <button class="btn btn-outline" onclick="showNotification('error', '操作失败')">错误通知</button>
+          <button class="btn btn-outline" onclick="showNotification('warning', '警告信息')">警告通知</button>
+          <button class="btn btn-outline" onclick="showNotification('info', '提示信息')">信息通知</button>
+        </div>
+      </div>
+
+      <div class="saas-divider">主题效果</div>
+
+      <div style="background: var(--bg-input); border-radius: var(--radius); padding: 16px;">
+        <p style="color: var(--text-primary); margin-bottom: 8px;">当前主题颜色示例：</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px;">
+          <div style="background: var(--bg-primary); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-primary); font-size: 12px;">主背景</div>
+          <div style="background: var(--bg-secondary); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-primary); font-size: 12px;">次背景</div>
+          <div style="background: var(--accent); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">主色调</div>
+          <div style="background: var(--border); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-primary); font-size: 12px;">边框色</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="effectsTab" class="demo-tab-content" style="display: none;">
+      <h3 style="margin-bottom: 16px; color: var(--text-primary);">动画效果</h3>
+      
+      <div style="margin-bottom: 20px;">
+        <div class="saas-label">加载动画</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div class="saas-loader"></div>
+          <span style="color: var(--text-secondary);">旋转加载动画</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <div class="saas-label">进度条</div>
+        <div class="saas-progress" style="margin-bottom: 8px;">
+          <div class="saas-progress-bar" style="width: 75%"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary);">
+          <span>0%</span>
+          <span>75%</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="saas-label">悬停效果</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 12px;">
+          <div class="saas-card" style="text-align: center; padding: 20px; cursor: pointer;">
+            <div style="font-size: 24px; margin-bottom: 8px;">✨</div>
+            <div style="font-size: 13px; color: var(--text-primary);">悬停卡片</div>
+          </div>
+          <div class="saas-card" style="text-align: center; padding: 20px; cursor: pointer;">
+            <div style="font-size: 24px; margin-bottom: 8px;">🎨</div>
+            <div style="font-size: 13px; color: var(--text-primary);">悬停卡片</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; text-align: center;">
+      <button class="btn btn-primary btn-full" onclick="window.location.href='index.php'">返回聊天室</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script>
+function switchDemoTab(tabName) {
+  // 更新标签页状态
+  document.querySelectorAll('.saas-tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelector(`.saas-tab[onclick*="${tabName}"]`).classList.add('active');
+  
+  // 显示对应内容
+  document.querySelectorAll('.demo-tab-content').forEach(content => content.style.display = 'none');
+  document.getElementById(`${tabName}Tab`).style.display = 'block';
+}
+
+function showNotification(type, message) {
+  // 移除现有的通知
+  const existing = document.querySelector('.saas-notification');
+  if (existing) existing.remove();
+  
+  // 创建新通知
+  const notification = document.createElement('div');
+  notification.className = `saas-notification ${type}`;
+  notification.innerHTML = `
+    <div style="display: flex; align-items: flex-start; gap: 12px;">
+      <div style="font-size: 20px;">
+        ${type === 'success' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️'}
+      </div>
+      <div style="flex: 1;">
+        <div style="font-weight: 600; margin-bottom: 4px; color: var(--text-primary);">${type === 'success' ? '成功' : type === 'error' ? '错误' : type === 'warning' ? '警告' : '提示'}</div>
+        <div style="font-size: 13px; color: var(--text-secondary);">${message}</div>
+      </div>
+      <button onclick="this.parentElement.parentElement.remove()" style="background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 18px;">×</button>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // 5秒后自动移除
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.remove();
+    }
+  }, 5000);
+}
+
+// 添加悬停效果监听
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.saas-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-2px)';
+      card.style.boxShadow = '0 8px 32px var(--shadow)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+      card.style.boxShadow = '0 4px 20px var(--shadow)';
+    });
+  });
+});
+</script>
+</body>
+</html>
